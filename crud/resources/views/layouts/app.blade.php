@@ -54,15 +54,15 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/state"
+                                    <a class="dropdown-item" href="/students"
                                     onclick="event.preventDefault();
                                                   document.getElementById('edit-form').submit();">
-                                     {{ __('Estados') }}
+                                     {{ __('Estudantes') }}
                                     </a>
-                                    <a class="dropdown-item" href="/city"
+                                    <a class="dropdown-item" href="/course"
                                     onclick="event.preventDefault();
                                                 document.getElementById('get-form').submit();">
-                                    {{ __('Cidades') }}
+                                    {{ __('Cursos') }}
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
@@ -73,10 +73,10 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                    <form id="edit-form" action="/state"  style="display: none;">
+                                    <form id="edit-form" action="/student"  style="display: none;">
                                         @csrf
                                     </form>
-                                    <form id="get-form" action="/city"  style="display: none;">
+                                    <form id="get-form" action="/course"  style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
