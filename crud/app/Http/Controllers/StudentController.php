@@ -13,8 +13,8 @@ class StudentController extends Controller
     public function index()
     {
 
-        $city = DB::table('students')
-            ->select('students.id','students.nome' ,'students.cpf', 'students.endereco', 'students.celular')->get();
+        $city = DB::table('users')
+            ->select('users.id','users.name' ,'users.cpf', 'users.RG', 'users.endereço', 'users.celular', 'users.email')->get();
 
         return view('students/index', ['students' => $students]);
     }
