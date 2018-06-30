@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,13 +13,25 @@
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('home');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('user', 'userController');
+Route::resource('user', 'UserController');
+
+Route::resource('course', 'CourseController');
+
+Route::get('/course/{id}/delete', 'CourseController@destroy');
+
+Route::get('/course/{id}/edit', 'CourseController@edit');
+
+Route::get('/course/{id}', 'CourseController@update');
+
+Route::resource('student', 'StudentController');
+
+Route::get('/student/{id}/delete', 'StudentController@destroy');
 
 Route::resource('city', 'CityController');

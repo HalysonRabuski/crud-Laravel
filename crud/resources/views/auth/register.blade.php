@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -25,11 +25,11 @@
                             </div>
                         </div>
 
-                          <div class="form-group row">
-                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('cpf') }}</label>
+                         <div class="form-group row">
+                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ old('cpf') }}" required>
+                                <input id="cpf" type="text" class="form-control" name="cpf" required>
                             </div>
                         </div>
 
@@ -45,7 +45,7 @@
                             <label for="endereco" class="col-md-4 col-form-label text-md-right">{{ __('endereco') }}</label>
 
                             <div class="col-md-6">
-                                <input id="endereco" type="text" class="form-control{{ $errors->has('endereco') ? ' is-invalid' : '' }}" name="endereco" value="{{ old('endereco') }}" required>
+                                <input id="endereco" type="text" class="form-control{{ $errors->has('endereco') ? ' is-invalid' : '' }}" name="address" value="{{ old('endereco') }}" required>
                             </div>
                         </div>
 
@@ -53,7 +53,7 @@
                             <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('celular') }}</label>
 
                             <div class="col-md-6">
-                                <input id="celular" type="text" class="form-control{{ $errors->has('celular') ? ' is-invalid' : '' }}" name="celular" value="{{ old('celular') }}" required>
+                                <input id="celular" type="text" class="form-control{{ $errors->has('celular') ? ' is-invalid' : '' }}" name="cellphone" value="{{ old('celular') }}" required>
                             </div>
                         </div>
 

@@ -54,7 +54,7 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/students"
+                                    <a class="dropdown-item" href="/student"
                                     onclick="event.preventDefault();
                                                   document.getElementById('edit-form').submit();">
                                      {{ __('Estudantes') }}
