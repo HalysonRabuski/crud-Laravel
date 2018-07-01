@@ -16,7 +16,7 @@
                         </div>
                     @endif
 
-                    {!! Form::open(['url' => '/course/$course->id', 'method' => 'post']) !!}
+                    {!! Form::open(['url' => "/course/$course->id", 'method' => 'put']) !!}
                         <div class="form-group row">
                             {{ Form::label('nome', 'Nome do Curso:', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
                             <div class="col-sm-10">

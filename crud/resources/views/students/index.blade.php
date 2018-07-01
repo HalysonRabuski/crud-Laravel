@@ -6,8 +6,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Estudantes
-                    <a href="/student/create" class="float-right btn btn-success">Novo estudante</a>
+                    Cursos!
+                    <a href="/course/create" class="float-right btn btn-success">Novo Curso</a>
                 </div>
                 <div class="card-body">
                     @if (session('status'))
@@ -18,30 +18,22 @@
 
                     <table class="table">
                         <tr>
-                            <th>ID</th>
                             <th>Nome</th>
-                            <th>CPF</th>
-                            <th>RG</th>
-                            <th>Endereço</th>
-                            <th>Celular</th>
-                            <th>Email</th>
+                            <th>Ementa</th>
+                            <th>Quantidade de Alunos</th>                            
                         </tr>
-                        @foreach($student as $p)
+                        @foreach($course as $p)
                             <tr>
-                                <td>{{ $p->id }}</td>
-                                <td>{{ $p->name }}</td>
-                                <td>{{ $p->cpf }}</td>
-                                <td>{{ $p->RG }}</td>
-                                <td>{{ $p->address }}</td>
-                                <td>{{ $p->cellphone }}</td>
-                                <td>{{ $p->email }}</td>                        
+                                <td>{{ $p->nome }}</td>
+                                <td>{{ $p->ementa }}</td>
+                                <td>{{ $p->qtdAlunos }}</td>
                                 <td>
-                                    <!--<a href="/student/{{ $p->id }}/edit" class="btn btn-warning">Editar</a>-->
-                                    <a href="/student/{{ $p->id }}/delete" class="btn btn-danger">Remover</a>
+                                    <a href="" class="btn btn-warning">matricular-se</a>
                                 </td>
                             </tr>
                         @endforeach
                     </table>
+                    {{ $course->links() }}
                 </div>
             </div>
         </div>

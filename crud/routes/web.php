@@ -13,7 +13,7 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Auth::routes();
@@ -28,10 +28,9 @@ Route::get('/course/{id}/delete', 'CourseController@destroy');
 
 Route::get('/course/{id}/edit', 'CourseController@edit');
 
-Route::get('/course/{id}', 'CourseController@update');
-
 Route::resource('student', 'StudentController');
 
 Route::get('/student/{id}/delete', 'StudentController@destroy');
+
 
 Route::resource('city', 'CityController');

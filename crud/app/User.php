@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class,'enrollments', 'user_id', 'course_id')->withPivot('authorized','id')->withTimestamps();
+    }
 }

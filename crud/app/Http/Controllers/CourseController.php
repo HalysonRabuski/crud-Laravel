@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use auth;
 use App\User;
 use App\Course;
 use App\Student;
@@ -17,17 +18,27 @@ class CourseController extends Controller
         $this->middleware('auth');
     }
 
+    public function admin()
+    {
+        $user = Auth::User();
+    }
+
     public function index()
     {
-
-        $course = Course::all();
+        $user = Auth::User();
+        $course = Course::paginate(1);
+        
+        if($user->admin){
             
-        return view('courses/index', ['course' => $course]);
+            return view('admin/courses/index', ['course' => $course]);
+        }else{
+            return view('students/index',['course'=>$course]);
+        } 
     }
 
     public function create() 
     {
-        return view('courses/new');
+        return view('admin/courses/new');
     }
 
     public function store(Request $request) 
@@ -39,10 +50,10 @@ class CourseController extends Controller
         
         if ($p->save()) {
             \Session::flash('status', 'Curso criado com sucesso!');
-            return redirect('/course');
+            return redirect('course');
         } else {
             \Session::flash('status', 'Ocorreu um erro ao criar o curso!');
-            return view('courses.new');
+            return view('admin/courses.new');
         }
     }
 
@@ -59,7 +70,7 @@ class CourseController extends Controller
         $course = Course::findOrFail($id);
         
 
-        return view('courses.edit', ['course' => $course]);
+        return view('admin/courses.edit', ['course' => $course]);
     }
 
     public function update(Request $request, $id) {
@@ -70,10 +81,10 @@ class CourseController extends Controller
         
         if ($p->save()) {
             \Session::flash('status', 'Curso atualizado com sucesso!');
-            return redirect('/course');
+            return redirect('course');
         } else {
             \Session::flash('status', 'Ocorreu um erro ao atualizar o Curso.');
-            return view('courses.edit', ['course' => $p]);
+            return view('courses.edit');
         }
     }
 
