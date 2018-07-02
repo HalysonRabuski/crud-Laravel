@@ -28,8 +28,14 @@
                          <div class="form-group row">
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
 
+
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control" name="cpf" required>
+                                <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ old('cpf') }}" required>
+                                @if ($errors->has('cpf'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('cpf') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -38,6 +44,11 @@
 
                             <div class="col-md-6">
                                 <input id="RG" type="text" class="form-control{{ $errors->has('RG') ? ' is-invalid' : '' }}" name="RG" value="{{ old('RG') }}" required>
+                                @if ($errors->has('RG'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('RG') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -45,7 +56,12 @@
                             <label for="endereco" class="col-md-4 col-form-label text-md-right">{{ __('endereco') }}</label>
 
                             <div class="col-md-6">
-                                <input id="endereco" type="text" class="form-control{{ $errors->has('endereco') ? ' is-invalid' : '' }}" name="address" value="{{ old('endereco') }}" required>
+                                <input id="endereco" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('endereco') }}" required>
+                                @if ($errors->has('address'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -53,7 +69,12 @@
                             <label for="celular" class="col-md-4 col-form-label text-md-right">{{ __('celular') }}</label>
 
                             <div class="col-md-6">
-                                <input id="celular" type="text" class="form-control{{ $errors->has('celular') ? ' is-invalid' : '' }}" name="cellphone" value="{{ old('celular') }}" required>
+                                <input id="celular" type="text" class="form-control{{ $errors->has('cellphone') ? ' is-invalid' : '' }}" name="cellphone" value="{{ old('celular') }}" required>
+                                @if ($errors->has('cellphone'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('cellphone') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 

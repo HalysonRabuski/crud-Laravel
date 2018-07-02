@@ -6,30 +6,31 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Cursos!
-                    <a href="/students/registers" class="float-right btn btn-success">Minhas Matrículas</a>
+                Escolha o curso que deseja matricular o aluno!                    
                 </div>
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-danger">
+                        <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
 
                     <table class="table">
                         <tr>
+                            <th>ID</th>
                             <th>Nome</th>
-                            <th>Ementa</th>
-                            <th>Quantidade de Alunos</th>      
-                            <th>ações</th>                      
+                            <th>ementa</th>
+                            <th>qtdAlunos</th>
+                            <th>Ações</th>                            
                         </tr>
                         @foreach($course as $p)
                             <tr>
+                                <td>{{ $p->id }}</td>
                                 <td>{{ $p->nome }}</td>
                                 <td>{{ $p->ementa }}</td>
                                 <td>{{ $p->qtdAlunos }}</td>
                                 <td>
-                                    <a href="students/{{$p->id}}/enroll" class="btn btn-warning">matricular-se</a>
+                                    <a href="/admin/enroll/{{$p->id}}/{{$student->id}}" class="btn btn-warning">Matricular</a>                                
                                 </td>
                             </tr>
                         @endforeach

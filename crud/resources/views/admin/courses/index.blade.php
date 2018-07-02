@@ -21,7 +21,8 @@
                             <th>ID</th>
                             <th>Nome</th>
                             <th>ementa</th>
-                            <th>qtdAlunos</th>                            
+                            <th>qtdAlunos</th>
+                            <th>Ações</th>                            
                         </tr>
                         @foreach($course as $p)
                             <tr>
