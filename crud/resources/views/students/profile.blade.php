@@ -27,7 +27,7 @@
                         <div class="form-group row">
                             {{ Form::label('cpf', 'cpf:', ['class' => 'col-sm-2 col-form-label col-form-label-sm']) }}
                             <div class="col-sm-10">
-                                {{ Form::text('cpf', $student->cpf, ['class' => 'form-control form-control-sm'] ) }}
+                                {{ Form::number('cpf', $student->cpf, ['class' => 'form-control form-control-sm'] ) }}
                             </div>
                         </div>
 
