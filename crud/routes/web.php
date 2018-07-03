@@ -48,4 +48,3 @@ Route::get('/students/{id}/enroll', 'EnrollmentController@enroll');
 
 Route::get('/students/registers', 'EnrollmentController@registers');
 
-Route::resource('city', 'CityController');
